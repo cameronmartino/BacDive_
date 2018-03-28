@@ -21,10 +21,10 @@ class BacdiveClient(object):
 
     def getAllLinksone(self):
         #To get a list with links to the Detail View for BacDive ID, but only for the first page.
-        #To consider the other pages, you habve to change the url to 'http://bacdive.dsmz.de/api/bacdive/bacdive_id/?page=2' etc.
+        #To consider the other pages, you habve to change the url to 'https://bacdive.dsmz.de/api/bacdive/bacdive_id/?page=2' etc.
         
         #INPUT:
-        response = requests.get('http://bacdive.dsmz.de/api/bacdive/bacdive_id/',headers=self.headers,auth=self.credentials)
+        response = requests.get('https://bacdive.dsmz.de/api/bacdive/bacdive_id/',headers=self.headers,auth=self.credentials)
             
         if response.status_code == 200: # check response code
             results = response.json()
@@ -35,11 +35,11 @@ class BacdiveClient(object):
 
     def getAllLinksrest(self,next_page):
         #To get a list with links to the Detail View for BacDive ID, but only for the first page.
-        #To consider the other pages, you habve to change the url to 'http://bacdive.dsmz.de/api/bacdive/bacdive_id/?page=2' etc.
+        #To consider the other pages, you habve to change the url to 'https://bacdive.dsmz.de/api/bacdive/bacdive_id/?page=2' etc.
         
         #INPUT:
-        print 'http://bacdive.dsmz.de/api/bacdive/bacdive_id/?page=%s'%str(next_page)
-        response = requests.get('http://bacdive.dsmz.de/api/bacdive/bacdive_id/?page=%s'%str(next_page),headers=self.headers,auth=self.credentials)
+        print 'https://bacdive.dsmz.de/api/bacdive/bacdive_id/?page=%s'%str(next_page)
+        response = requests.get('https://bacdive.dsmz.de/api/bacdive/bacdive_id/?page=%s'%str(next_page),headers=self.headers,auth=self.credentials)
             
         if response.status_code == 200: # check response code
             results = response.json()
